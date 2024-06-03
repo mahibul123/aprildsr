@@ -60,14 +60,14 @@ filtered_data = madsmart[
 col1, col2 = st.columns(2)
 with col1:
    st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: GREEN; color: blue;">APOLLO TOTAL SALE {round(filtered_data["Extended Amount"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: GREEN; color: white;">APOLLO TOTAL SALE {round(filtered_data["Extended Amount"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
 with col2:
    
    st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: blue;">APOLLO TOTAL UNIT {round(filtered_data["Quantity"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: white;">APOLLO TOTAL UNIT {round(filtered_data["Quantity"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
@@ -87,18 +87,19 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: blue;">OPTIVAL TOTAL SALE {round(filtered_df["Extended Amount"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: wite;">OPTIVAL TOTAL SALE {round(filtered_df["Extended Amount"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
 with col2:
     st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: blue;">OPTIVAL TOTAL UNIT {round(filtered_df["Quantity"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: white;">OPTIVAL TOTAL UNIT {round(filtered_df["Quantity"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
 # crete bar chart..abs
 
+col1, col2 = st.columns(2)
 
 
 pivot_table = pd.pivot_table(filtered_data, values='Quantity', index='Description 1', aggfunc='sum')
@@ -110,10 +111,12 @@ pivot_table_reset = pivot_table.reset_index()
 fig = px.bar(pivot_table_reset, x='Description 1', y='Quantity', title='Total Quantity for Each Item', labels={'Description 1': 'Item', 'Quantity': 'Total Quantity'})
 
 # Streamlit app
-st.title("Sales Data Visualization")
 
-st.write("### Total Quantity for Each Item")
-st.plotly_chart(fig)
+st.title("Sales Data Visualization")
+with col1:
+    
+  st.write("### Total Quantity for Each Item")
+  st.plotly_chart(fig)
 
 
 # optive
@@ -127,6 +130,8 @@ pivot_table_reset = pivot_table.reset_index()
 fig = px.bar(pivot_table_reset, x='Description 1', y='Quantity', title='Total Quantity for Each Item', labels={'Description 1': 'Item', 'Quantity': 'Total Quantity'})
 
 # Streamlit app
+wiht col2:
+
 st.title("Sales Data Visualization")
 
 st.write("### Total Quantity for Each Item")
