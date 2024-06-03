@@ -25,9 +25,9 @@ custom_css = """
     border-style: soild;
     bottom: 0; 
     right: 5px;
-     background-color: black;
+     background-color: GREEN;
     font-size: 30px;
-    text-align: laft;
+    text-align: CENTER;
     font-weight: bold;
 }
 </style>
