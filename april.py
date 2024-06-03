@@ -130,9 +130,9 @@ pivot_table_reset = pivot_table.reset_index()
 fig = px.bar(pivot_table_reset, x='Description 1', y='Quantity', title='Total Quantity for Each Item', labels={'Description 1': 'Item', 'Quantity': 'Total Quantity'})
 
 # Streamlit app
-wiht col2:
 
 st.title("Sales Data Visualization")
-
-st.write("### Total Quantity for Each Item")
-st.plotly_chart(fig)
+with col2:
+    
+   st.write("### Total Quantity for Each Item")
+   st.plotly_chart(fig)
