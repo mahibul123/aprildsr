@@ -60,14 +60,14 @@ filtered_data = madsmart[
 col1, col2 = st.columns(2)
 with col1:
    st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: black; color: blue;">APOLLO TOTAL SALE {round(filtered_data["Extended Amount"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: GREEN; color: blue;">APOLLO TOTAL SALE {round(filtered_data["Extended Amount"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
 with col2:
    
    st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: black; color: blue;">APOLLO TOTAL UNIT {round(filtered_data["Quantity"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: blue;">APOLLO TOTAL UNIT {round(filtered_data["Quantity"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
@@ -87,13 +87,13 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: black; color: blue;">OPTIVAL TOTAL SALE {round(filtered_df["Extended Amount"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: blue;">OPTIVAL TOTAL SALE {round(filtered_df["Extended Amount"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
 with col2:
     st.markdown(
-    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: black; color: blue;">OPTIVAL TOTAL UNIT {round(filtered_df["Quantity"].sum()):.2f}</div>',
+    f'<div style="font-size: 30px;text-align: center; border-style: double;background-color: green; color: blue;">OPTIVAL TOTAL UNIT {round(filtered_df["Quantity"].sum()):.2f}</div>',
     unsafe_allow_html=True
 )
 
